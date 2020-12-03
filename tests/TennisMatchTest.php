@@ -11,32 +11,22 @@ class TennisMatchTest extends TestCase
      * @test
      * @dataProvider scores
      */
-//    function it_scores_0_to_0()
     function it_scores_a_tennis_match($playerOnePoints, $playerTwoPoints, $score)
     {
-//        $match = new TennisMatch();
-//        $match = new TennisMatch('Player 1', 'Player 2');
-//        $match = new TennisMatch('John', 'Jane');
         $match = new TennisMatch(
             $john = new Player('John'),
             $jane = new Player('Jane')
         );
 
         for ($i = 0; $i < $playerOnePoints; $i++) {
-//            $match->pointToPlayerOne();
-//            $match->pointTo($john);
             $john->score();
         }
 
         for ($i = 0; $i < $playerTwoPoints; $i++) {
-//            $match->pointToPlayerTwo();
-//            $match->pointTo($jane);
             $jane->score();
         }
 
-//        $match->pointToPlayerTwo();
         $this->assertEquals($score, $match->score());
-//        $this->assertEquals('love-love', $match->score());
     }
 
     function scores()
@@ -57,25 +47,4 @@ class TennisMatchTest extends TestCase
             [0, 4, 'Winner: Jane'],
         ];
     }
-
-
-/*    function it_scores_1_to_0()
-    {
-        $match = new TennisMatch();
-
-        $match->pointToPlayerOne();
-
-        $this->assertEquals('fifteen-love', $match->score());
-    }*/
-
-/*    function it_scores_2_to_0()
-    {
-        $match = new TennisMatch();
-
-        $match->pointToPlayerOne();
-        $match->pointToPlayerOne();
-//        $match->pointToPlayerTwo();
-
-        $this->assertEquals('thirty-love', $match->score());
-    }*/
 }
