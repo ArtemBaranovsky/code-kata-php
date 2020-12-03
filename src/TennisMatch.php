@@ -75,22 +75,26 @@ class TennisMatch
      */
     protected function isDeuce(): bool
     {
-        return $this->canBeWon() && $this->playerOne->points === $this->playerTwo->points;
+        if (! $this->hasReachedDeuceThreshold()) {
+            return false;
+        }
+
+        return $this->playerOne->points === $this->playerTwo->points;
     }
 
     protected function hasAdvantage()
     {
-        if ($this->canBeWon()) {
-            return ! $this->isDeuce();
+        if (! $this->hasReachedDeuceThreshold()) {
+            return false;
         }
 
-        return false;
+        return ! $this->isDeuce();
     }
 
     /**
      * @return bool
      */
-    protected function canBeWon(): bool
+    protected function hasReachedDeuceThreshold(): bool
     {
         return $this->playerOne->points >= 3 && $this->playerTwo->points >= 3;
     }
