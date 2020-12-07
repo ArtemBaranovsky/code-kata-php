@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 class SongTest extends TestCase
 {
     /** @test */
-//    function first_verse()
     function ninety_nine_bottles_verse()
     {
         $expected = <<<EOT
