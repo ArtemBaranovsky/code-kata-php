@@ -16,6 +16,7 @@ class SongTest extends TestCase
 99 bottles of beer
 Take one down and pass it around
 98 bottles of beer on the wall
+
 EOT;
 
         $result = (new Song)->verse(99);
@@ -31,6 +32,7 @@ EOT;
 98 bottles of beer
 Take one down and pass it around
 97 bottles of beer on the wall
+
 EOT;
 
         $result = (new Song)->verse(98);
@@ -46,6 +48,7 @@ EOT;
 45 bottles of beer
 Take one down and pass it around
 44 bottles of beer on the wall
+
 EOT;
 
         $result = (new Song)->verse(45);
@@ -61,6 +64,7 @@ EOT;
 2 bottles of beer
 Take one down and pass it around
 1 bottle of beer on the wall
+
 EOT;
 
         $result = (new Song)->verse(2);
@@ -76,6 +80,7 @@ EOT;
 1 bottle of beer
 Take one down and pass it around
 No more bottles of beer on the wall
+
 EOT;
 
         $result = (new Song)->verse(1);
